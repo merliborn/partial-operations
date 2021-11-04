@@ -1,0 +1,57 @@
+name:                partial-operations
+version:             0.1.0.0
+# github:              "githubuser/partial-operations"
+license:             MIT
+license-file:        LICENSE
+author:              "merliborn"
+maintainer:          "sourei.merlin@gmail.com"
+copyright:           "merliborn 2021"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+synopsis:            Type classes for partially data and functions
+category:            Data
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+# description:         Please see the README on GitHub at <https://github.com/githubuser/partial-operations#readme>
+
+dependencies:
+- base >= 4.11.1.0 && < 5
+- safe-exceptions
+- groups >= 0.5
+
+library:
+  source-dirs: src
+  exposed-modules: 
+    - Control.Partial
+    - Data.Semigroup.Partial
+    - Data.Monoid.Partial
+    - Data.Group.Partial
+# other-modules: []
+  dependencies:
+    - exceptions >= 0.4
+
+tests:
+  partial-operations-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - partial-operations
+  partial-operations-doctest:
+    main:                 test/testdoc.hs
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - partial-operations
+    - doctest
