@@ -1,6 +1,6 @@
 name:                partial-operations
 version:             0.1.0.0
-# github:              "githubuser/partial-operations"
+github:              "merliborn/partial-operations"
 license:             MIT
 license-file:        LICENSE
 author:              "merliborn"
